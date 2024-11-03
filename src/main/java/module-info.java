@@ -4,5 +4,6 @@ module co.edu.uniquindio.poo {
     requires javafx.base;
 
     opens co.edu.uniquindio.poo to javafx.fxml;
+    opens co.edu.uniquindio.poo.viewController to javafx.fxml;
     exports co.edu.uniquindio.poo;
 }

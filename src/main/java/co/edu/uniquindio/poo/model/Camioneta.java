@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-public class Camioneta extends Vehiculo implements ICosto{
+public class Camioneta extends Vehiculo implements ICosto {
     private double capacidadCarga;
 
     public Camioneta(String matricula, String marca, String modelo, int anoFabricacion, double capacidadCarga, Reserva reserva) {
