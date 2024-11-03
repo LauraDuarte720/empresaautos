@@ -19,10 +19,13 @@ public class reservaController {
 
     private Empresa empresa;
     private ObservableList<Reserva> reservas;
+    
+    
 
     public reservaController() {
         this.empresa = new Empresa("Mi Empresa");
         this.reservas = FXCollections.observableArrayList();
+        
     }
 
     // Cargar clientes y vehículos (asumiendo que se cargan de forma estática)
@@ -72,6 +75,10 @@ public class reservaController {
         return reservas; // Retorna la lista de reservas para ser mostrada en la vista
     }
 
+    public void agregarReserva(Reserva reserva) {
+        reservas.add(reserva);
+    }
+
     public double calcularCosto(Vehiculo vehiculo) {
         if (vehiculo instanceof ICosto) {
             return ((ICosto) vehiculo).calcularCosto();
@@ -86,7 +93,13 @@ public class reservaController {
     cargarVehiculos();
 }
 
-    private void cargarClientes() {
+@FXML
+private ComboBox<Cliente> txtListaClientes;
+@FXML
+private ComboBox<Vehiculo> txtListaVehiculo;
+
+
+    public void cargarClientes() {
     // Cargar clientes desde el modelo (puedes tener una lista estática o de otro lugar)
     ObservableList<Cliente> clientes = FXCollections.observableArrayList();
     // Suponiendo que tienes algunos clientes
@@ -95,7 +108,7 @@ public class reservaController {
     txtListaClientes.setItems(clientes);
 }
 
-private void cargarVehiculos() {
+    public void cargarVehiculos() {
     // Cargar vehículos desde el modelo (puedes tener una lista estática o de otro lugar)
     ObservableList<Vehiculo> vehiculos = FXCollections.observableArrayList();
     // Suponiendo que tienes algunos vehículos
@@ -104,9 +117,5 @@ private void cargarVehiculos() {
     txtListaVehiculo.setItems(vehiculos);
 }
    
-    @FXML
-    private ComboBox<Cliente> txtListaClientes;
-    @FXML
-    private ComboBox<Vehiculo> txtListaVehiculo;
 }
 

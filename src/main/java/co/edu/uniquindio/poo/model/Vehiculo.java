@@ -68,9 +68,10 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "\nVehiculo: matricula: " + matricula + ", marca: " + marca + ", modelo: " + modelo + ", añoFabricacion: "
-                + anoFabricacion +"Reserva= "+ reserva.getNombre()+"\n";
+        return String.format("%s %s %s", marca, modelo, (reserva != null ? reserva.getNombre() : "Sin Reserva"));
     }
+    
+    
 
 
     

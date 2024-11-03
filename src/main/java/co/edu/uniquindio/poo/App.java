@@ -18,6 +18,10 @@ public class App extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/reserva.fxml"));
             Scene scene = new Scene(loader.load());
 
+
+            reservaViewController viewController = loader.getController();
+            viewController.setReservaController(new reservaController()); // Pasar instancia de reservaController
+
             primaryStage.setTitle("Sistema de Reservas");
             primaryStage.setScene(scene);
             primaryStage.setResizable(false); // Para no permitir redimensionar la ventana
